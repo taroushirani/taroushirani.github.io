@@ -1,4 +1,4 @@
-# nnsvs's Python 3.13 support
+# NNSVS's Python 3.13 support
 
 ## Introduction
 NNSVS saw most of its active development around the Python 3.9 era, so running it on a recent Python requires a number of changes to get it to build. The issues and their fixes are listed below.
