@@ -1,5 +1,5 @@
 # NNSVS python 3.13 support
-- [nnsvs_python313_support]({% link nnsvs_python313_support.md %})
+- [Python 3.13_support for NNSVS]({% link nnsvs_python313_support.md %})
 
 # NNSVS/ENUNU/SimpleEnunu related files
 I distribute these archives in the hope that it will be useful, but without any warranty. 
