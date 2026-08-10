@@ -53,3 +53,9 @@ As with ParallelWaveGAN above, the `import pip` check in `setup.py` causes a `Mo
 
 ### Fix
 Same as above.
+
+## `torch.load`'s `weights_only` default
+PyTorch 2.6 changed the default of `torch.load` to `weights_only=True`. NNSVS's checkpoints passed the optimizer/scheduler parameters (an `OmegaConf` `DictConfig`) straight into the optimizer via `**`, so list-valued entries such as Adam's `betas` ended up pickled into `optimizer_state` as `ListConfig` objects, causing `UnpicklingError: Weights only load failed`.
+
+### Fix
+Explicitly convert the optimizer/scheduler parameters to plain Python types before saving. For checkpoints saved before this fix, migration scripts are provided: `utils/migrate_checkpoint_weights_only.py` for a single file, and `python utils/migrate_expdir_weights_only.py` to convert a whole directory at once.
